@@ -21,6 +21,8 @@ const Navbar = () => {
           />
         </Link>
 
+        <div className="border-gray-100">Search bar</div>
+
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
             <Link href="/">Airbnb your home</Link>

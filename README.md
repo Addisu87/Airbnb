@@ -26,7 +26,7 @@ bun dev
 - 🖼️ Supabase Storage
 - 💨 Prisma ORM
 - 🎨 Styling with Tailwindcss and shadcn UI
-- Deployment to Vercel
+- 🌐 Deployment to Vercel
 - 📅 Calendar Implementation
 - 📍 Dynamic Map Implementation
 - 📒 Reservation System
