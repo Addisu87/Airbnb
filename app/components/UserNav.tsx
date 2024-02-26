@@ -1,10 +1,13 @@
 import { MenuIcon } from "lucide-react";
 
 import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -24,8 +27,12 @@ const UserNav = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Sign up</DropdownMenuItem>
-          <DropdownMenuItem>Login</DropdownMenuItem>
+          <DropdownMenuItem>
+            <RegisterLink>Sign up</RegisterLink>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <LoginLink>Sign in</LoginLink>
+          </DropdownMenuItem>
 
           <DropdownMenuSeparator />
           <DropdownMenuItem>Airbnb your home</DropdownMenuItem>
