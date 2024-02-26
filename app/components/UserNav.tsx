@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Link from "next/link";
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();
@@ -39,24 +40,40 @@ const UserNav = async () => {
           <DropdownMenuSeparator />
           {user ? (
             <DropdownMenuItem>
-              <LogoutLink>Log out</LogoutLink>
+              <LogoutLink className="w-full">Log out</LogoutLink>
             </DropdownMenuItem>
           ) : (
             <>
               <DropdownMenuItem>
-                <RegisterLink>Sign up</RegisterLink>
+                <RegisterLink className="w-full">Sign up</RegisterLink>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <LoginLink>Sign in</LoginLink>
+                <LoginLink className="w-full">Sign in</LoginLink>
               </DropdownMenuItem>
             </>
           )}
 
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Airbnb your home</DropdownMenuItem>
-          <DropdownMenuItem>Favorites</DropdownMenuItem>
-          <DropdownMenuItem>Listing</DropdownMenuItem>
-          <DropdownMenuItem>Reservations</DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/" className="w-full">
+              Airbnb your home
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/listings" className="w-full">
+              My Listing
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/favorites" className="w-full">
+              My Favorites
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/reservations" className="w-full">
+              My Reservations
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

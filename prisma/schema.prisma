@@ -12,12 +12,12 @@ datasource db {
 }
 
 model User {
-  id           String  @id @default(uuid())
-  firstName     String
-  lastName     String
-  email        String  @unique
-  profileImage  String?
+  id          String  @id @default(uuid())
+  firstName    String
+  lastName    String
+  email       String  @unique
+  imageSrc    String?
 
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
