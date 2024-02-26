@@ -1,15 +1,15 @@
 import {
+  Bird,
   Castle,
   Droplet,
   Fan,
+  Fish,
   Gem,
   Landmark,
   LucideIcon,
-  Mountain,
   MountainSnow,
   Palmtree,
   Sailboat,
-  Ship,
   Snowflake,
   Sun,
   Tent,
@@ -46,7 +46,7 @@ export const categories: CategoryProps[] = [
   {
     id: 4,
     label: "Countryside",
-    icon: Mountain,
+    icon: Bird,
     description: "This property is in the countryside!",
   },
   {
@@ -64,7 +64,7 @@ export const categories: CategoryProps[] = [
   {
     id: 7,
     label: "Lake",
-    icon: Ship,
+    icon: Fish,
     description: "This property is near a lake!",
   },
   {
