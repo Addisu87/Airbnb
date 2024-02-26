@@ -5,6 +5,7 @@ import { categories } from "./libs/categories";
 import { LucideIcon } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
+import { cn } from "@/lib/utils";
 
 interface CategoryProps {
   id: number;
@@ -33,13 +34,19 @@ const FilterItems: React.FC<CategoryProps> = ({
   );
 
   return (
-    <div className="flex gap-x-8 mt-5 w-full overflow-x-scroll items-center justify-center transition cursor-pointer no-scrollbar">
+    <div className="flex gap-x-8 mt-5 w-full overflow-x-scroll transition cursor-pointer no-scrollbar">
       {categories.map((item) => (
         <Link
           key={item.id}
           href={pathname + "?" + createQueryString("filter", item.label)}
+          className={cn(
+            search === item.label
+              ? "border-b-2 border-black pb-2 flex-shrink-0"
+              : "opacity-70 flex-shrink-0",
+            "flex flex-col gap-y-3 items-center justify-center"
+          )}
         >
-          <div>
+          <div className="">
             <item.icon size={26} />
             <div className="font-medium text-sm">
               <p>{item.label}</p>
