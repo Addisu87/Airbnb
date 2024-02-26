@@ -2,24 +2,11 @@
 
 import Link from "next/link";
 import { categories } from "./libs/categories";
-import { LucideIcon } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import { cn } from "@/lib/utils";
 
-interface CategoryProps {
-  id: number;
-  label: string;
-  icon: LucideIcon;
-  description: string;
-}
-
-const FilterItems: React.FC<CategoryProps> = ({
-  id,
-  icon,
-  label,
-  description,
-}) => {
+const FilterItems = () => {
   const searchParams = useSearchParams();
   const search = searchParams.get("filter");
   const pathname = usePathname();

@@ -4,6 +4,7 @@ import {
   Fan,
   Gem,
   Landmark,
+  LucideIcon,
   Mountain,
   MountainSnow,
   Palmtree,
@@ -16,7 +17,14 @@ import {
   Warehouse,
 } from "lucide-react";
 
-export const categories = [
+interface CategoryProps {
+  id: number;
+  label: string;
+  icon: LucideIcon;
+  description: string;
+}
+
+export const categories: CategoryProps[] = [
   {
     id: 1,
     label: "Beach",
