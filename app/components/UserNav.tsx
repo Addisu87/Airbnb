@@ -24,14 +24,14 @@ const UserNav = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuSeparator />
+          <DropdownMenuItem>Sign up</DropdownMenuItem>
+          <DropdownMenuItem>Login</DropdownMenuItem>
+
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Airbnb your home</DropdownMenuItem>
           <DropdownMenuItem>Favorites</DropdownMenuItem>
           <DropdownMenuItem>Listing</DropdownMenuItem>
           <DropdownMenuItem>Reservations</DropdownMenuItem>
-
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Register</DropdownMenuItem>
-          <DropdownMenuItem>Login</DropdownMenuItem>
-          <DropdownMenuItem>Logout</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

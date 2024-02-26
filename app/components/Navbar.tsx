@@ -21,8 +21,14 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="rounded-full border px-5 py-2">
-          <UserNav />
+        <div className="flex items-center justify-center space-x-4">
+          <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
+            <Link href="/">Airbnb your home</Link>
+          </div>
+
+          <div className="rounded-full border px-5 py-2">
+            <UserNav />
+          </div>
         </div>
       </div>
     </nav>
