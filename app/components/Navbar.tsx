@@ -21,7 +21,11 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="border-gray-100">Search bar</div>
+        <div className="flex divide-x gap-x-3  border-gray-100 px-2 py-2 bg-gray-100 rounded-lg">
+          <p>Guests</p>
+          <p>Rooms</p>
+          <p>Restrooms</p>
+        </div>
 
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
