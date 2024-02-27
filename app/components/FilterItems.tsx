@@ -6,7 +6,7 @@ import { useCallback } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { categoryItems } from "./libs/categoryItems";
+import { categoryItems } from "@/app/libs/categoryItems";
 
 const FilterItems = () => {
   const searchParams = useSearchParams();
