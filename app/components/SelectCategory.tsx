@@ -22,7 +22,7 @@ const SelectCategory = () => {
             onClick={() => setSelectCategory(item.label)}
           >
             <CardHeader>
-              <item.icon size={26} />
+              <item.icon size={28} />
               <h3 className="font-light">{item.label}</h3>
             </CardHeader>
           </Card>

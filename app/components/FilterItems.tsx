@@ -30,13 +30,14 @@ const FilterItems = () => {
           href={pathname + "?" + createQueryString("filter", item.label)}
           className={cn(
             search === item.label
-              ? "border-b-2 border-black pb-2 flex-shrink-0"
+              ? "border-b-2 border-black pb-2 flex-shrink-0 dark:border-primary"
               : "opacity-70 flex-shrink-0",
             "flex flex-col gap-y-3 items-center justify-center"
           )}
         >
           <div className="">
-            <item.icon size={26} />
+            <item.icon size={28} />
+
             <div className="font-medium text-sm">
               <p>{item.label}</p>
             </div>
