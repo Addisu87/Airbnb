@@ -1,3 +1,4 @@
+import prismadb from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { NextResponse } from "next/server";
 
@@ -10,14 +11,14 @@ export async function GET() {
     throw new Error("Something went wrong");
   }
 
-  let dbUser = await prisma.user.findUnique({
+  let dbUser = await prismadb.user.findUnique({
     where: {
       id: user.id,
     },
   });
 
   if (!dbUser) {
-    dbUser = await prisma.user.create({
+    dbUser = await prismadb.user.create({
       data: {
         id: user.id,
         firstName: user.given_name ?? "",
