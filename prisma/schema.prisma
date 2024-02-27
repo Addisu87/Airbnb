@@ -38,7 +38,7 @@ model Home {
   addedLocation   Boolean @default(false)
   categoryName  String?
 
-  User         User?  @relation("UserToHome", fields: [userId], references: [id], onDelete: Cascade)
+  user         User?  @relation("UserToHome", fields: [userId], references: [id], onDelete: Cascade)
   userId       String?
 
   createdAt   DateTime @default(now())

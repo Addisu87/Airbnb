@@ -45,7 +45,7 @@ const Navbar = async () => {
 
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2 dark:hover:bg-gray-900 dark:hover:text-white">
-            <h3> Airbnb your home</h3>
+            Airbnb your home
           </div>
 
           <div>
