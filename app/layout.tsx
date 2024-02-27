@@ -5,6 +5,7 @@ import Navbar from "@/app/components/Navbar";
 
 import "./globals.css";
 import ToasterProvider from "@/providers/toast-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${font.className} antialiased`}>
-        <Navbar />
-        {children}
-        <ToasterProvider />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          {children}
+          <ToasterProvider />
+        </ThemeProvider>
       </body>
     </html>
   );

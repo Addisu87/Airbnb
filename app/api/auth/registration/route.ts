@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import toast from "react-hot-toast";
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import prismadb from "@/lib/db";
@@ -9,7 +10,7 @@ export async function GET() {
     const user = await getUser();
 
     if (!user || user === null || !user.id) {
-      throw new Error("Something went wrong");
+      toast.error("Something went wrong.");
     }
 
     let dbUser = await prismadb.user.findUnique({
