@@ -38,7 +38,7 @@ export default function RentRoute({ params }: { params: { id: string } }) {
         <DialogTrigger asChild>
           <Button variant="outline">Airbnb home</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-2xl">
+        <DialogContent className="sm:max-w-[575px]">
           <DialogHeader>
             <DialogTitle>Which of these best describe your home?</DialogTitle>
           </DialogHeader>
