@@ -38,17 +38,15 @@ export default function RentRoute({ params }: { params: { id: string } }) {
         <DialogTrigger asChild>
           <Button variant="outline">Airbnb home</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[475px]">
+        <DialogContent className="sm:max-w-2xl">
           <DialogHeader>
             <DialogTitle>Which of these best describe your home?</DialogTitle>
           </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="items-center gap-4">
-              <form action={createCategoryPage}>
-                <input type="hidden" name="homeId" value={params?.id} />
-                <SelectCategory />
-              </form>
-            </div>
+          <div className="grid">
+            <form action={createCategoryPage}>
+              <input type="hidden" name="homeId" value={params?.id} />
+              <SelectCategory />
+            </form>
           </div>
           <DialogFooter>
             <Button type="submit">Next</Button>
