@@ -23,12 +23,13 @@ const Navbar = () => {
         </Link>
 
         <Tabs
-          defaultValue=""
-          className="w-[400px] hover:rounded-full px-3 py-2 gap-x-3"
+          defaultValue="place"
+          className="border-[1px] w-full md:w-auto rounded-full shadow-sm hover:shadow-md transition cursor-pointer"
         >
-          <TabsList>
-            <TabsTrigger value="place">Where</TabsTrigger>
-            <TabsTrigger value="dates">Add dates</TabsTrigger>
+          <TabsList className="">
+            <TabsTrigger value="place">Anywhere</TabsTrigger>
+            <TabsTrigger value="dates">Add week</TabsTrigger>
+            <TabsTrigger value="guests">Add guests</TabsTrigger>
           </TabsList>
           <TabsContent value="place" className="text-muted-foreground">
             Search destination
@@ -36,11 +37,18 @@ const Navbar = () => {
           <TabsContent value="dates" className="text-muted-foreground">
             Check in
           </TabsContent>
+          <TabsContent value="guests" className="text-muted-foreground">
+            Add guests
+          </TabsContent>
         </Tabs>
 
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
-            <Link href="/">Airbnb your home</Link>
+            <form className="w-full">
+              <button type="submit" className="w-full text-start">
+                Airbnb your home
+              </button>
+            </form>
           </div>
 
           <div className="rounded-full border px-5 py-2">

@@ -47,16 +47,6 @@ const UserNav = async () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuItem>
-            <form className="w-full">
-              <button type="submit" className="w-full text-start">
-                Airbnb your home
-              </button>
-            </form>
-          </DropdownMenuItem>
-
-          <DropdownMenuSeparator />
-
-          <DropdownMenuItem>
             <Link href="/listings" className="w-full">
               My Listing
             </Link>
