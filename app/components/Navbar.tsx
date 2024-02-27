@@ -5,7 +5,7 @@ import Link from "next/link";
 import UserNav from "./UserNav";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const Navbar = () => {
+const Navbar = async () => {
   return (
     <nav className="w-full border-b">
       <div className="container mx-auto px-5 lg:px-10  flex items-center justify-between py-5">
@@ -44,11 +44,7 @@ const Navbar = () => {
 
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
-            <form className="w-full">
-              <button type="submit" className="w-full text-start">
-                Airbnb your home
-              </button>
-            </form>
+            <h3> Airbnb your home</h3>
           </div>
 
           <div className="rounded-full border px-5 py-2">
