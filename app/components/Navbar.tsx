@@ -21,7 +21,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex divide-x gap-x-3  border-gray-100 px-2 py-2 bg-gray-100 rounded-lg">
+        <div className="flex divide-x hover:bg-gray-100 hover:rounded-full px-3 py-2 gap-x-3">
           <p>Guests</p>
           <p>Rooms</p>
           <p>Restrooms</p>

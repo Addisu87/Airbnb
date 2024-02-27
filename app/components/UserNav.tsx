@@ -1,4 +1,6 @@
 import { MenuIcon } from "lucide-react";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Link from "next/link";
 
 import {
   RegisterLink,
@@ -13,8 +15,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import Link from "next/link";
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();
@@ -37,23 +37,6 @@ const UserNav = async () => {
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
-          <DropdownMenuSeparator />
-          {user ? (
-            <DropdownMenuItem>
-              <LogoutLink className="w-full">Log out</LogoutLink>
-            </DropdownMenuItem>
-          ) : (
-            <>
-              <DropdownMenuItem>
-                <RegisterLink className="w-full">Sign up</RegisterLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <LoginLink className="w-full">Sign in</LoginLink>
-              </DropdownMenuItem>
-            </>
-          )}
-
-          <DropdownMenuSeparator />
           <DropdownMenuItem>
             <Link href="/" className="w-full">
               Airbnb your home
@@ -74,6 +57,23 @@ const UserNav = async () => {
               My Reservations
             </Link>
           </DropdownMenuItem>
+
+          <DropdownMenuSeparator />
+
+          {user ? (
+            <DropdownMenuItem>
+              <LogoutLink className="w-full">Log out</LogoutLink>
+            </DropdownMenuItem>
+          ) : (
+            <>
+              <DropdownMenuItem>
+                <RegisterLink className="w-full">Sign up</RegisterLink>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <LoginLink className="w-full">Sign in</LoginLink>
+              </DropdownMenuItem>
+            </>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
