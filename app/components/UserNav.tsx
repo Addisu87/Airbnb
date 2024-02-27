@@ -36,14 +36,6 @@ const UserNav = async () => {
             />
             <AvatarFallback>PI</AvatarFallback>
           </Avatar>
-          {/* <img
-            src={
-              user?.picture ??
-              "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
-            }
-            alt="Profile image"
-            className="rounded-full h-8 w-8 hidden lg:block"
-          /> */}
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuItem>

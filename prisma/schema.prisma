@@ -17,7 +17,7 @@ model User {
   lastName    String
   email       String  @unique
   imageSrc    String?
-  home       Home[]
+  home        Home[]  @relation("UserToHome")
 
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -33,10 +33,9 @@ model Home {
   country      String?
   photo        String?
   price        Int?
-  user         User?  @relation("HomeToUser", fields: [userId], references: [id], onDelete: Cascade)
+  User         User?  @relation("UserToHome", fields: [userId], references: [id], onDelete: Cascade)
+  userId       String?
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
-
-  @@index([userId])
 }
