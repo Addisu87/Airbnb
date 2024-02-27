@@ -16,6 +16,26 @@ pnpm dev
 bun dev
 ```
 
+Then, run prism a next-generation Node.js and TypeScript ORM:
+
+```bash
+npx prisma init
+```
+
+```bash
+npx prisma generate
+```
+
+```bash
+npx prisma db push
+```
+
+- Explore the data in Prisma Studio
+
+```bash
+npx prisma studio
+```
+
 ## Features:
 
 - 🌐 Next.js 14 App Router
