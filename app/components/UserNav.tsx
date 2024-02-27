@@ -42,6 +42,9 @@ const UserNav = async () => {
               Airbnb your home
             </Link>
           </DropdownMenuItem>
+
+          <DropdownMenuSeparator />
+
           <DropdownMenuItem>
             <Link href="/listings" className="w-full">
               My Listing
