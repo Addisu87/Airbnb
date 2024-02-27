@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 
 import "./globals.css";
+import ToasterProvider from "@/providers/toast-provider";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${font.className} antialiased`}>
         <Navbar />
         {children}
+        <ToasterProvider />
       </body>
     </html>
   );
