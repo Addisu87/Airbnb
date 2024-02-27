@@ -3,6 +3,7 @@ import DesktopLogo from "../../public/airbnb-desktop.png";
 import MobileLogo from "../../public/airbnb-mobile.png";
 import Link from "next/link";
 import UserNav from "./UserNav";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Navbar = () => {
   return (
@@ -21,11 +22,21 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex divide-x hover:bg-gray-100 hover:rounded-full px-3 py-2 gap-x-3">
-          <p>Guests</p>
-          <p>Rooms</p>
-          <p>Restrooms</p>
-        </div>
+        <Tabs
+          defaultValue=""
+          className="w-[400px] hover:rounded-full px-3 py-2 gap-x-3"
+        >
+          <TabsList>
+            <TabsTrigger value="place">Where</TabsTrigger>
+            <TabsTrigger value="dates">Add dates</TabsTrigger>
+          </TabsList>
+          <TabsContent value="place" className="text-muted-foreground">
+            Search destination
+          </TabsContent>
+          <TabsContent value="dates" className="text-muted-foreground">
+            Check in
+          </TabsContent>
+        </Tabs>
 
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
