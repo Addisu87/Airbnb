@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { MenuIcon } from "lucide-react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
@@ -33,14 +34,24 @@ const UserNav = async () => {
                 "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
               }
             />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>PI</AvatarFallback>
           </Avatar>
+          {/* <img
+            src={
+              user?.picture ??
+              "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
+            }
+            alt="Profile image"
+            className="rounded-full h-8 w-8 hidden lg:block"
+          /> */}
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuItem>
-            <Link href="/" className="w-full">
-              Airbnb your home
-            </Link>
+            <form className="w-full">
+              <button type="submit" className="w-full text-start">
+                Airbnb your home
+              </button>
+            </form>
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />
