@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 import { categoryItems } from "@/app/libs/categoryItems";
 
-const FilterItems = () => {
+const Categories = () => {
   const searchParams = useSearchParams();
   const search = searchParams.get("filter");
   const pathname = usePathname();
@@ -32,13 +32,12 @@ const FilterItems = () => {
             search === item.label
               ? "border-b-2 border-black pb-2 flex-shrink-0 dark:border-primary"
               : "opacity-70 flex-shrink-0",
-            "flex flex-col gap-y-3 items-center justify-center"
+            "flex flex-col items-center justify-center"
           )}
         >
-          <div className="">
+          <div className="flex flex-col items-center justify-center">
             <item.icon size={28} />
-
-            <div className="font-medium text-sm">
+            <div className="font-medium text-sm mt-1">
               <p>{item.label}</p>
             </div>
           </div>
@@ -48,4 +47,4 @@ const FilterItems = () => {
   );
 };
 
-export default FilterItems;
+export default Categories;
