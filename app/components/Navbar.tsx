@@ -4,6 +4,7 @@ import MobileLogo from "../../public/airbnb-mobile.png";
 import Link from "next/link";
 import UserNav from "./UserNav";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ModeToggle from "./ModeToggle";
 
 const Navbar = async () => {
   return (
@@ -45,6 +46,10 @@ const Navbar = async () => {
         <div className="flex items-center justify-center space-x-4">
           <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2">
             <h3> Airbnb your home</h3>
+          </div>
+
+          <div>
+            <ModeToggle />
           </div>
 
           <div className="rounded-full border px-5 py-2">
