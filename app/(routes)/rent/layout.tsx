@@ -5,5 +5,9 @@ export default function RentLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="mt-10">{children}</div>;
+  return (
+    <>
+      <div className="mt-10">{children}</div>
+    </>
+  );
 }
