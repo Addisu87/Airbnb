@@ -28,9 +28,9 @@ const UserNav = async () => {
   });
 
   return (
-    <div>
+    <>
       <DropdownMenu>
-        <DropdownMenuTrigger className="flex items-center gap-x-3">
+        <DropdownMenuTrigger className="flex space-x-2 items-center justify-center cursor-pointer">
           <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5" />
 
           <Avatar className="hidden lg:block">
@@ -86,7 +86,7 @@ const UserNav = async () => {
           )}
         </DropdownMenuContent>
       </DropdownMenu>
-    </div>
+    </>
   );
 };
 
