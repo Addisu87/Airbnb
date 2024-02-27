@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { categories } from "./libs/categories";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
+
 import { cn } from "@/lib/utils";
+
+import { categoryItems } from "./libs/categoryItems";
 
 const FilterItems = () => {
   const searchParams = useSearchParams();
@@ -22,7 +24,7 @@ const FilterItems = () => {
 
   return (
     <div className="flex gap-x-8 mt-5 w-full overflow-x-scroll transition cursor-pointer no-scrollbar">
-      {categories.map((item) => (
+      {categoryItems.map((item) => (
         <Link
           key={item.id}
           href={pathname + "?" + createQueryString("filter", item.label)}

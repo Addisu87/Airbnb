@@ -24,7 +24,7 @@ interface CategoryProps {
   description: string;
 }
 
-export const categories: CategoryProps[] = [
+export const categoryItems: CategoryProps[] = [
   {
     id: 1,
     label: "Beach",
