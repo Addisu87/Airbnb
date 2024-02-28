@@ -9,21 +9,23 @@ const SelectCategory = () => {
   const [selectCategory, setSelectCategory] = useState<string | null>(null);
 
   return (
-    <div className="grid grid-cols-4 gap-8 mt-10 w-3/5 mx-auto">
+    <div className="grid grid-cols-4 gap-6 mt-10 w-full mx-auto">
       <input
         type="hidden"
         name="categoryName"
         value={selectCategory as string}
       />
       {categoryItems.map((item) => (
-        <div key={item.id} className="cursor-pointer">
+        <div key={item.id} className="cursor-pointer overflow-scroll">
           <Card
             className={selectCategory === item.label ? "border-primary" : ""}
             onClick={() => setSelectCategory(item.label)}
           >
-            <CardHeader>
+            <CardHeader className="flex flex-col items-center justify-center">
               <item.icon size={28} />
-              <h3 className="font-light">{item.label}</h3>
+              <div className="font-medium text-sm mt-1">
+                <p>{item.label}</p>
+              </div>
             </CardHeader>
           </Card>
         </div>

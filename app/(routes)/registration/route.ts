@@ -9,8 +9,9 @@ export async function GET() {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
 
-    if (!user || user === null || !user.id) {
+    if (!user || user.id === null || !user.id) {
       toast.error("Something went wrong.");
+      return NextResponse.redirect("http://localhost:3000");
     }
 
     let dbUser = await prismadb.user.findUnique({
