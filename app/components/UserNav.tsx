@@ -16,8 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-import { createAirbnbHome } from "../actions";
+import { createAirbnbHome } from "@/actions";
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();

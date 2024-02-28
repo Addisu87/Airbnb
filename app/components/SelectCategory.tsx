@@ -6,10 +6,12 @@ import { Card, CardHeader } from "@/components/ui/card";
 import { categoryItems } from "@/app/libs/categoryItems";
 
 const SelectCategory = () => {
-  const [selectCategory, setSelectCategory] = useState<string | null>(null);
+  const [selectCategory, setSelectCategory] = useState<string | undefined>(
+    undefined
+  );
 
   return (
-    <div className="grid grid-cols-4 gap-6 mt-10 w-full mx-auto">
+    <div className="grid grid-cols-4 gap-6 mt-10 w-full mx-auto mb-36">
       <input
         type="hidden"
         name="categoryName"
