@@ -6,7 +6,7 @@ import UserNav from "./UserNav";
 import ModeToggle from "./ModeToggle";
 import SearchBar from "./SearchBar";
 
-const Navbar = async () => {
+const Navbar = () => {
   return (
     <nav className="w-full border-b">
       <div className="container mx-auto px-5 lg:px-10  flex items-center justify-between py-5">
