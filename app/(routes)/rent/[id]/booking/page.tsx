@@ -2,7 +2,7 @@ import { createCategoryPage } from "@/app/actions";
 import SelectCategory from "@/app/components/SelectCategory";
 import BottomBar from "@/app/components/BottomBar";
 
-export default function BookingPage({ params }: { params: { id: string } }) {
+export default function BookingRoute({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="w-3/5 mx-auto">

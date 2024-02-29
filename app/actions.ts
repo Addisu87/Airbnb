@@ -76,11 +76,13 @@ export async function CreateDescription(formData: FormData) {
     data: {
       title: title,
       description: description,
-      price: Number(price),
       guests: guestNumber,
       bedrooms: roomNumber,
       bathrooms: bathroomNumber,
       photo: imageData?.path,
+      price: Number(price),
     },
   });
+
+  return redirect(`/rent/${homeId}/address`);
 }
