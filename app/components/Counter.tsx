@@ -5,7 +5,7 @@ import { Minus, Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-const Counter = () => {
+const Counter = ({ name }: { name: string }) => {
   const [amount, setAmount] = useState(0);
 
   const handleIncrease = () => {
@@ -18,6 +18,7 @@ const Counter = () => {
   };
   return (
     <div className="flex items-center gap-x-4">
+      <input type="hidden" name={name} value={amount} />
       <Button
         variant="outline"
         size="icon"

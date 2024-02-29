@@ -47,6 +47,14 @@ export async function createCategoryPage(formData: FormData) {
   });
 
   return redirect(`/rent/${homeId}/description`);
+  const title = formData.get("title") as string;
+  const description = formData.get("description") as string;
+  const price = formData.get("price");
+  const imageFile = formData.get("image") as File;
+
+  const guestNumber = formData.get("guest") as string;
+  const roomNumber = formData.get("room") as string;
+  const bathroomNumber = formData.get("bathroom") as string;
 }
 
 export async function CreateDescription(formData: FormData) {}
