@@ -15,39 +15,34 @@ export async function createAirbnbHome({ userId }: { userId: string }) {
     },
   });
 
-  if (data === null) {
-    const data = await prismadb.home.create({
-      data: {
-        userId: userId,
-      },
-    });
+  let newData;
 
-    return redirect(`/rent/${data.id}/booking`);
-  } else if (
-    !data.addedCategory &&
-    !data.addedDescription &&
-    !data.addedLocation
-  ) {
-    return redirect(`/rent/${data.id}/booking`);
-  } else if (data.addedCategory && !data.addedDescription) {
-    return redirect(`/rent/${data.id}/description`);
-  } else if (
-    data.addedCategory &&
-    data.addedDescription &&
-    !data.addedLocation
-  ) {
-    return redirect(`/rent/${data.id}/address`);
-  } else if (
-    data.addedCategory &&
-    data.addedDescription &&
-    data.addedLocation
-  ) {
-    const data = await prismadb.home.create({
+  if (data === null) {
+    newData = await prismadb.home.create({
       data: {
         userId: userId,
       },
     });
-    return redirect(`/rent/${data.id}/booking`);
+    return redirect(`/rent/${newData.id}/booking`);
+  }
+
+  switch (true) {
+    case data.addedCategory && !data.addedDescription:
+      return redirect(`/rent/${data.id}/description`);
+
+    case data.addedCategory && data.addedDescription && !data.addedLocation:
+      return redirect(`/rent/${data.id}/address`);
+
+    case data.addedCategory && data.addedDescription && data.addedLocation:
+      newData = await prismadb.home.create({
+        data: {
+          userId: userId,
+        },
+      });
+      return redirect(`/rent/${newData.id}/booking`);
+
+    default:
+      return redirect(`/rent/${data.id}/booking`);
   }
 }
 
