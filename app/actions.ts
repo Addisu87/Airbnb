@@ -31,6 +31,23 @@ export async function createAirbnbHome({ userId }: { userId: string }) {
     return redirect(`/rent/${data.id}/booking`);
   } else if (data.addedCategory && !data.addedDescription) {
     return redirect(`/rent/${data.id}/description`);
+  } else if (
+    data.addedCategory &&
+    data.addedDescription &&
+    !data.addedLocation
+  ) {
+    return redirect(`/rent/${data.id}/address`);
+  } else if (
+    data.addedCategory &&
+    data.addedDescription &&
+    data.addedLocation
+  ) {
+    const data = await prismadb.home.create({
+      data: {
+        userId: userId,
+      },
+    });
+    return redirect(`/rent/${data.id}/booking`);
   }
 }
 
@@ -97,8 +114,8 @@ export async function createLocation(formData: FormData) {
       id: homeId,
     },
     data: {
-      addedLocation: true,
       country: countryValue,
+      addedLocation: true,
     },
   });
   return redirect("/");
