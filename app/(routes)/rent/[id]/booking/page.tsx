@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 import { createCategoryPage } from "@/app/actions";
 import SelectCategory from "@/app/components/SelectCategory";
+import { SubmitButton } from "@/app/components/SubmitButtons";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function BookingPage({ params }: { params: { id: string } }) {
   return (
@@ -21,7 +23,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
             <Button variant="ghost">
               <Link href="/">Cancel</Link>
             </Button>
-            <Button>Next</Button>
+            <SubmitButton />
           </div>
         </div>
       </form>
