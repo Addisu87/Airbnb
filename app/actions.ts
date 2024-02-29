@@ -87,3 +87,19 @@ export async function CreateDescription(formData: FormData) {
 
   return redirect(`/rent/${homeId}/address`);
 }
+
+export async function createLocation(formData: FormData) {
+  const homeId = formData.get("homeId") as string;
+  const countryValue = formData.get("countryValue") as string;
+
+  const data = await prismadb.home.update({
+    where: {
+      id: homeId,
+    },
+    data: {
+      addedLocation: true,
+      country: countryValue,
+    },
+  });
+  return redirect("/");
+}
