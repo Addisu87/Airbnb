@@ -9,7 +9,7 @@ const BottomBar = () => {
     <>
       <div className="fixed w-3/5 bottom-0 z-10 bg-white border-t h-24">
         <div className="flex items-center justify-between mx-auto px-4 lg:px-10 h-full ">
-          <Button variant="ghost">
+          <Button variant="secondary" asChild>
             <Link href="/">Cancel</Link>
           </Button>
           <SubmitButton />
