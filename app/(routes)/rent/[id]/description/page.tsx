@@ -1,7 +1,3 @@
-export default function DescriptionPage() {
-  return (
-    <div>
-      <h1>You have added descriptiton</h1>
-    </div>
-  );
+export default function DescriptionRoute() {
+  return <h3>Description page</h3>;
 }

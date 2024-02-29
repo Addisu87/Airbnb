@@ -11,7 +11,7 @@ const SelectCategory = () => {
   );
 
   return (
-    <div className="grid grid-cols-4 gap-6 mt-10 w-full mx-auto mb-36">
+    <div className="grid grid-cols-4 gap-8 mt-10 w-3/5 mx-auto mb-36">
       <input
         type="hidden"
         name="categoryName"

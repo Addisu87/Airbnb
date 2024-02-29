@@ -33,10 +33,11 @@ model Home {
   country      String?
   photo        String?
   price        Int?
-  addedCategory  Boolean @default(false)
+  categoryName   String?
+
+  addedCategory    Boolean @default(false)
   addedDescription Boolean @default(false)
-  addedLocation   Boolean @default(false)
-  categoryName  String?
+  addedLocation    Boolean @default(false)
 
   user         User?  @relation("UserToHome", fields: [userId], references: [id], onDelete: Cascade)
   userId       String?

@@ -1,8 +1,9 @@
-import { createCategoryPage } from "@/actions";
+import { createCategoryPage } from "@/app/actions";
 import SelectCategory from "@/app/components/SelectCategory";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function RentRoute({ params }: { params: { id: string } }) {
+export default function BookingPage({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="w-3/5 mx-auto">
@@ -17,8 +18,8 @@ export default function RentRoute({ params }: { params: { id: string } }) {
 
         <div className="fixed w-full bottom-0 z-10 bg-white border-t h-24">
           <div className="flex items-center justify-between mx-auto px-4 lg:px-10 h-full ">
-            <Button variant="secondary" asChild>
-              Cancel
+            <Button variant="ghost">
+              <Link href="/">Cancel</Link>
             </Button>
             <Button>Next</Button>
           </div>

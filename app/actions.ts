@@ -20,13 +20,13 @@ export async function createAirbnbHome({ userId }: { userId: string }) {
       },
     });
 
-    return redirect(`/rent/${data.id}/create`);
+    return redirect(`/rent/${data.id}/booking`);
   } else if (
     !data.addedCategory &&
     !data.addedDescription &&
     !data.addedLocation
   ) {
-    return redirect(`/rent/${data.id}/create`);
+    return redirect(`/rent/${data.id}/booking`);
   } else if (data.addedCategory && !data.addedDescription) {
     return redirect(`/rent/${data.id}/description`);
   }
