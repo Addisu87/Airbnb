@@ -104,6 +104,8 @@ export async function createLocation(formData: FormData) {
   const homeId = formData.get("homeId") as string;
   const countryValue = formData.get("countryValue") as string;
 
+  console.log("Country Value:", countryValue);
+
   const data = await prismadb.home.update({
     where: {
       id: homeId,
@@ -113,5 +115,8 @@ export async function createLocation(formData: FormData) {
       addedLocation: true,
     },
   });
+
+  console.log("Location data:", data);
+
   return redirect("/");
 }
