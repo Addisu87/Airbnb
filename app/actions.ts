@@ -65,7 +65,7 @@ export async function CreateDescription(formData: FormData) {
   const { data: imageData } = await supabase.storage
     .from("images")
     .upload(`${imageFile.name}-${new Date()}`, imageFile, {
-      cacheControl: "259200",
+      cacheControl: "2592000",
       contentType: "image/png",
     });
 
@@ -81,6 +81,7 @@ export async function CreateDescription(formData: FormData) {
       bathrooms: bathroomNumber,
       photo: imageData?.path,
       price: Number(price),
+      addedDescription: true,
     },
   });
 
