@@ -48,3 +48,5 @@ export async function createCategoryPage(formData: FormData) {
 
   return redirect(`/rent/${homeId}/description`);
 }
+
+export async function CreateDescription(formData: FormData) {}

@@ -1,3 +1,5 @@
+import BottomBar from "@/app/components/BottomBar";
+import Counter from "@/app/components/Counter";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -56,10 +58,30 @@ export default function DescriptionRoute() {
                     How many guests do you want?
                   </p>
                 </div>
+                <Counter />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col">
+                  <h3 className="underline font-medium">Rooms</h3>
+                  <p className="text-muted-foreground text-sm">
+                    How many rooms do you have?
+                  </p>
+                </div>
+                <Counter />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col">
+                  <h3 className="underline font-medium">Bathrooms</h3>
+                  <p className="text-muted-foreground text-sm">
+                    How many bathrooms do you have?
+                  </p>
+                </div>
+                <Counter />
               </div>
             </CardHeader>
           </Card>
         </div>
+        <BottomBar />
       </form>
     </>
   );

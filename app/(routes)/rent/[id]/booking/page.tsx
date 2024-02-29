@@ -1,9 +1,6 @@
-import Link from "next/link";
-
 import { createCategoryPage } from "@/app/actions";
 import SelectCategory from "@/app/components/SelectCategory";
-import { SubmitButton } from "@/app/components/SubmitButtons";
-import { Button } from "@/components/ui/button";
+import BottomBar from "@/app/components/BottomBar";
 
 export default function BookingPage({ params }: { params: { id: string } }) {
   return (
@@ -17,15 +14,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
       <form action={createCategoryPage}>
         <input type="hidden" name="homeId" value={params.id} />
         <SelectCategory />
-
-        <div className="fixed w-full bottom-0 z-10 bg-white border-t h-24">
-          <div className="flex items-center justify-between mx-auto px-4 lg:px-10 h-full ">
-            <Button variant="ghost">
-              <Link href="/">Cancel</Link>
-            </Button>
-            <SubmitButton />
-          </div>
-        </div>
+        <BottomBar />
       </form>
     </>
   );
