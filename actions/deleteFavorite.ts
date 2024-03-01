@@ -1,7 +1,8 @@
 "use server";
 
-import prismadb from "@/lib/db";
 import { revalidatePath } from "next/cache";
+
+import prismadb from "@/lib/db";
 
 export async function deleteFavorite(formData: FormData) {
   const favoriteId = formData.get("favoriteId") as string;

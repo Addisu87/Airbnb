@@ -1,7 +1,8 @@
 "use server";
 
-import prismadb from "@/lib/db";
 import { revalidatePath } from "next/cache";
+
+import prismadb from "@/lib/db";
 
 export async function addFavorite(formData: FormData) {
   const homeId = formData.get("homeId") as string;
