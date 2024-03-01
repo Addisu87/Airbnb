@@ -2,12 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useCountries } from "../hooks/getCountries";
+import HeartButton from "./HeartButton";
+import { addFavorite } from "@/actions/addFavorite";
 
 interface ListingProps {
   imagePath: string;
   description: string;
   location: string;
   price: number;
+  userId: string | undefined;
+  homeId: string;
+  favoriteId: string;
+  isInFavoriteList: boolean;
 }
 
 const ListingCard: React.FC<ListingProps> = ({
@@ -15,6 +21,10 @@ const ListingCard: React.FC<ListingProps> = ({
   description,
   location,
   price,
+  userId,
+  homeId,
+  favoriteId,
+  isInFavoriteList,
 }) => {
   const { getCountryByValue } = useCountries();
   const country = getCountryByValue(location);
@@ -28,6 +38,21 @@ const ListingCard: React.FC<ListingProps> = ({
           fill
           className="rounded-lg h-full object-cover"
         />
+        {userId && (
+          <div className="z-10 absolute top-2 right-2">
+            {isInFavoriteList ? (
+              <form action="">
+                <HeartButton />
+              </form>
+            ) : (
+              <form action={addFavorite}>
+                <input type="hidden" name="userId" value={userId} />
+                <input type="hidden" name="homeId" value={homeId} />
+                <HeartButton />
+              </form>
+            )}
+          </div>
+        )}
       </div>
 
       <Link href={"/"} className="mt-2">
