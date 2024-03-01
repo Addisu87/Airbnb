@@ -1,4 +1,4 @@
-import { Suspense, useReducer } from "react";
+import { Suspense } from "react";
 
 import prismadb from "@/lib/db";
 import Categories from "@/app/components/Categories";
@@ -65,7 +65,10 @@ async function ShowItems({
           ))}
         </div>
       ) : (
-        <NotItemFound />
+        <NotItemFound
+          title="Hey you don't have any favorite"
+          subtitle="Please add your favorite to right here..."
+        />
       )}
     </>
   );

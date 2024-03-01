@@ -60,7 +60,10 @@ const FavoritesRoute = async () => {
           ))}
         </div>
       ) : (
-        <NotItemFound />
+        <NotItemFound
+          title="Your favorite is empty...."
+          subtitle="Sorry, please add you favorites lists"
+        />
       )}
     </section>
   );
