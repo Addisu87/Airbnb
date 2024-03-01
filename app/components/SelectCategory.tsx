@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { Card, CardHeader } from "@/components/ui/card";
-import { categoryItems } from "@/app/libs/categoryItems";
+import { categoryItems } from "@/lib/categoryItems";
 
 const SelectCategory = () => {
   const [selectCategory, setSelectCategory] = useState<string | undefined>(

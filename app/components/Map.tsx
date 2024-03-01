@@ -8,7 +8,7 @@ import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-import { useCountries } from "../hooks/getCountries";
+import { useCountries } from "@/app/hooks/getCountries";
 
 // @ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
@@ -30,7 +30,7 @@ const Map = ({ locationValue }: { locationValue: string }) => {
     <>
       <MapContainer
         center={latLang ?? [51.505, -0.09]}
-        zoom={4}
+        zoom={6}
         scrollWheelZoom={false}
         className="h-[50vh] rounded-lg z-0"
       >

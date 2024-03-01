@@ -36,7 +36,6 @@ export default function AddressRoute({ params }: { params: { id: string } }) {
         <form action={createLocation}>
           <input type="hidden" name="homeId" value={params.id} />
           <input type="hidden" name="countryValue" value={locationValue} />
-
           <div className="mb-5">
             <Select required onValueChange={(value) => setLocationValue(value)}>
               <SelectTrigger className="w-full">
