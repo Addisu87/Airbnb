@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useCountries } from "../hooks/getCountries";
-import HeartButton from "./HeartButton";
+import { AddHeartButton, DeleteHeartButton } from "./HeartButton";
 import { addFavorite } from "@/actions/addFavorite";
+import { deleteFavorite } from "@/actions/deleteFavorite";
 
 interface ListingProps {
   imagePath: string;
@@ -14,6 +15,7 @@ interface ListingProps {
   homeId: string;
   favoriteId: string;
   isInFavoriteList: boolean;
+  pathname: string;
 }
 
 const ListingCard: React.FC<ListingProps> = ({
@@ -25,6 +27,7 @@ const ListingCard: React.FC<ListingProps> = ({
   homeId,
   favoriteId,
   isInFavoriteList,
+  pathname,
 }) => {
   const { getCountryByValue } = useCountries();
   const country = getCountryByValue(location);
@@ -41,14 +44,18 @@ const ListingCard: React.FC<ListingProps> = ({
         {userId && (
           <div className="z-10 absolute top-2 right-2">
             {isInFavoriteList ? (
-              <form action="">
-                <HeartButton />
+              <form action={deleteFavorite}>
+                <input type="hidden" name="favoriteId" value={favoriteId} />
+                <input type="hidden" name="userId" value={userId} />
+                <input type="hidden" name="pathname" value={pathname} />
+                <DeleteHeartButton />
               </form>
             ) : (
               <form action={addFavorite}>
                 <input type="hidden" name="userId" value={userId} />
                 <input type="hidden" name="homeId" value={homeId} />
-                <HeartButton />
+                <input type="hidden" name="pathname" value={pathname} />
+                <AddHeartButton />
               </form>
             )}
           </div>

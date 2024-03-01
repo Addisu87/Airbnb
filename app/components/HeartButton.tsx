@@ -4,21 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Heart, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
-const HeartButton = () => {
+interface HeartButtonProps {
+  isDelete?: boolean;
+}
+
+const HeartButton: React.FC<HeartButtonProps> = ({ isDelete }) => {
   const { pending } = useFormStatus();
+
   return (
-    <>
+    <Button
+      variant="ghost"
+      size="icon"
+      type="submit"
+      className={`cursor-pointer ${
+        pending ? "cursor-not-allowed" : ""
+      } text-primary-foreground border-neutral-500/70 `}
+      disabled={pending}
+    >
       {pending ? (
-        <Button variant="outline" size="icon" disabled className="bg-none">
-          <Loader2 className="h-4 w-r animate-spin text-primary" />
-        </Button>
+        <Loader2 className="h-5 w-5 animate-spin text-primary" />
       ) : (
-        <Button variant="outline" size="icon" type="submit" className="bg-none">
-          <Heart className="w-4 h-4" />
-        </Button>
+        <Heart
+          className={`w-5 h-5 ${isDelete ? "text-primary" : ""}`}
+          fill={isDelete ? "#E21C49" : "#A9A9A9"}
+        />
       )}
-    </>
+    </Button>
   );
 };
 
-export default HeartButton;
+export const AddHeartButton: React.FC = () => <HeartButton />;
+
+export const DeleteHeartButton: React.FC = () => <HeartButton isDelete />;
