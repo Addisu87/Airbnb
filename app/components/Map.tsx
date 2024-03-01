@@ -30,7 +30,7 @@ const Map = ({ locationValue }: { locationValue: string }) => {
     <>
       <MapContainer
         center={latLang ?? [51.505, -0.09]}
-        zoom={6}
+        zoom={5}
         scrollWheelZoom={false}
         className="h-[50vh] rounded-lg z-0"
       >
