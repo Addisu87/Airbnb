@@ -9,11 +9,11 @@ const HeartButton = () => {
   return (
     <>
       {pending ? (
-        <Button variant="outline" size="icon" disabled>
-          <Loader2 />
+        <Button variant="outline" size="icon" disabled className="bg-none">
+          <Loader2 className="h-4 w-r animate-spin text-primary" />
         </Button>
       ) : (
-        <Button variant="outline" size="icon" type="submit">
+        <Button variant="outline" size="icon" type="submit" className="bg-none">
           <Heart className="w-4 h-4" />
         </Button>
       )}

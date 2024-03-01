@@ -1,4 +1,5 @@
 import { File } from "lucide-react";
+import Heading from "./Heading";
 
 const NotItemFound = () => {
   return (
@@ -6,12 +7,12 @@ const NotItemFound = () => {
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
         <File className="h-10 w-10 text-primary" />
       </div>
-      <h4 className="m-6 text-xl font-semibold">
-        Sorry, there is no any listing found for this category...
-      </h4>
-      <p className="mt-2 text-center text-sm leading-6 text-muted-foreground">
-        Please check another category or create your own list.
-      </p>
+      <div className="m-6">
+        <Heading
+          title="Sorry, there is no any listing found for this category..."
+          subtitle="Please check another category or create your own list."
+        />
+      </div>
     </div>
   );
 };

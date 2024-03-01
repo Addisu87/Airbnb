@@ -5,18 +5,17 @@ import { Textarea } from "@/components/ui/textarea";
 import BottomBar from "@/app/components/BottomBar";
 import Counter from "@/app/components/Counter";
 import { getDescription } from "@/actions/getDescription";
+import Heading from "@/app/components/Heading";
 
-export default function DescriptionRoute({
-  params,
-}: {
+interface DescriptionProps {
   params: { id: string };
-}) {
+}
+
+export default function DescriptionRoute({ params }: DescriptionProps) {
   return (
     <>
       <div className="w-3/5 mx-auto">
-        <h2 className="text-3xl font-semibold tracking-tight transition-colors">
-          Please describe your home as good as you can!
-        </h2>
+        <Heading title="Please describe your home as good as you can!" />
 
         <form action={getDescription}>
           <input type="hidden" name="homeId" value={params.id} />
