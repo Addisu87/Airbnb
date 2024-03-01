@@ -16,13 +16,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { createAirbnbHome } from "@/app/actions";
+import { getAirbnbHome } from "@/actions/getAirbnbHome";
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const createHomeWithId = createAirbnbHome.bind(null, {
+  const createHomeWithId = getAirbnbHome.bind(null, {
     userId: user?.id as string,
   });
 

@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import BottomBar from "@/app/components/BottomBar";
 import Counter from "@/app/components/Counter";
-import { CreateDescription } from "@/app/actions";
+import { getDescription } from "@/actions/getDescription";
 
 export default function DescriptionRoute({
   params,
@@ -18,7 +18,7 @@ export default function DescriptionRoute({
           Please describe your home as good as you can!
         </h2>
 
-        <form action={CreateDescription}>
+        <form action={getDescription}>
           <input type="hidden" name="homeId" value={params.id} />
           <div className="mt-10 flex flex-col gap-y-5 mb-36">
             <div className="flex flex-col gap-y-2">

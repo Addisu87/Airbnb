@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
-import { createLocation } from "@/app/actions";
+import { getLocation } from "@/actions/getLocation";
 
 export default function AddressRoute({ params }: { params: { id: string } }) {
   const [locationValue, setLocationValue] = useState("");
@@ -32,7 +32,7 @@ export default function AddressRoute({ params }: { params: { id: string } }) {
         Where is your home located?
       </h2>
 
-      <form action={createLocation}>
+      <form action={getLocation}>
         <input type="hidden" name="homeId" value={params.id} />
         <input type="hidden" name="countryValue" value={locationValue} />
         <div className="mb-5">
