@@ -1,9 +1,10 @@
-import prismadb from "@/lib/db";
-
-import Categories from "./components/Categories";
-import ListingCard from "./components/ListingCard";
 import { Suspense } from "react";
-import CardSkeleton from "./components/CardSkeleton";
+
+import prismadb from "@/lib/db";
+import Categories from "@/app/components/Categories";
+import ListingCard from "@/app/components/ListingCard";
+import CardSkeleton from "@/app/components/CardSkeleton";
+import NotItemFound from "@/app/components/Not-item-found";
 
 async function getData({
   searchParams,
@@ -35,17 +36,23 @@ async function ShowItems({
 }) {
   const data = await getData({ searchParams: searchParams });
   return (
-    <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
-      {data.map((item) => (
-        <ListingCard
-          key={item.id}
-          description={item.description as string}
-          imagePath={item.photo as string}
-          location={item.country as string}
-          price={item.price as number}
-        />
-      ))}
-    </div>
+    <>
+      {data.length > 0 ? (
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+          {data.map((item) => (
+            <ListingCard
+              key={item.id}
+              description={item.description as string}
+              imagePath={item.photo as string}
+              location={item.country as string}
+              price={item.price as number}
+            />
+          ))}
+        </div>
+      ) : (
+        <NotItemFound />
+      )}
+    </>
   );
 }
 
