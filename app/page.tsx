@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import prismadb from "@/lib/db";
 import Categories from "@/app/components/Categories";
-import ListingCard from "@/app/components/FavoriteCard";
+import ListingCard from "@/app/components/ListingCard";
 import CardSkeleton from "@/app/components/CardSkeleton";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import NotFound from "@/app/components/Not-Found";

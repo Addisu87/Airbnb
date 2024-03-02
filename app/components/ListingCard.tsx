@@ -6,7 +6,7 @@ import { AddHeartButton, DeleteHeartButton } from "./HeartButton";
 import { addFavorite } from "@/actions/addFavorite";
 import { deleteFavorite } from "@/actions/deleteFavorite";
 
-interface FavoriteProps {
+interface ListingProps {
   imagePath: string;
   description: string;
   location: string;
@@ -18,7 +18,7 @@ interface FavoriteProps {
   pathname: string;
 }
 
-const FavoriteCard: React.FC<FavoriteProps> = ({
+const ListingCard: React.FC<ListingProps> = ({
   imagePath,
   description,
   location,
@@ -77,4 +77,4 @@ const FavoriteCard: React.FC<FavoriteProps> = ({
   );
 };
 
-export default FavoriteCard;
+export default ListingCard;
