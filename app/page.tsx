@@ -2,10 +2,10 @@ import { Suspense } from "react";
 
 import prismadb from "@/lib/db";
 import Categories from "@/app/components/Categories";
-import ListingCard from "@/app/components/ListingCard";
+import ListingCard from "@/app/components/FavoriteCard";
 import CardSkeleton from "@/app/components/CardSkeleton";
-import NotItemFound from "@/app/components/Not-item-found";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import NotFound from "@/app/components/Not-Found";
 
 async function getData({
   searchParams,
@@ -65,7 +65,7 @@ async function ShowItems({
           ))}
         </div>
       ) : (
-        <NotItemFound
+        <NotFound
           title="Hey you don't have any favorite"
           subtitle="Please add your favorite to right here..."
         />

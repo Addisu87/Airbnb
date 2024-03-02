@@ -6,7 +6,7 @@ interface NotItemFoundProps {
   subtitle: string;
 }
 
-const NotItemFound: React.FC<NotItemFoundProps> = ({ title, subtitle }) => {
+const NotFound: React.FC<NotItemFoundProps> = ({ title, subtitle }) => {
   return (
     <div className="flex flex-col min-h-[350px] items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50 mt-10">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
@@ -22,4 +22,4 @@ const NotItemFound: React.FC<NotItemFoundProps> = ({ title, subtitle }) => {
   );
 };
 
-export default NotItemFound;
+export default NotFound;
