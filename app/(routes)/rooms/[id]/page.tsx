@@ -6,7 +6,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import CategoryShowCase from "@/app/components/CategoryShowCase";
 import Heading from "@/app/components/Heading";
 import { useCountries } from "@/app/hooks/getCountries";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import RoomMap from "@/app/components/RoomMap";
 import Calender from "@/app/components/Calender";
@@ -82,6 +82,7 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
                   "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
                 }
               />
+              <AvatarFallback>UI</AvatarFallback>
             </Avatar>
             <div className="flex flex-col ml-4">
               <h3 className="font-medium">Hosted by {data?.user?.firstName}</h3>
