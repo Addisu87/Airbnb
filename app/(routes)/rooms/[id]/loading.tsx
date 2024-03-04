@@ -37,7 +37,6 @@ const Loading = () => {
             <Skeleton className="h-4 w-full" />
             <Skeleton className="h-4 w-full" />
             <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-full" />
           </div>
 
           <div>
