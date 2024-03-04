@@ -1,11 +1,11 @@
-import Image from "next/image";
-import DesktopLogo from "../../public/airbnb-desktop.png";
-import MobileLogo from "../../public/airbnb-mobile.png";
 import Link from "next/link";
-import UserNav from "./UserNav";
-import ModeToggle from "./ModeToggle";
-import SearchBar from "./SearchBar";
-import SearchModal from "./SearchModal";
+import Image from "next/image";
+
+import DesktopLogo from "@/public/airbnb-desktop.png";
+import MobileLogo from "@/public/airbnb-mobile.png";
+import UserNav from "@/app/components/UserNav";
+import ModeToggle from "@/app/components/ModeToggle";
+import SearchModal from "@/app/components/SearchModal";
 
 const Navbar = () => {
   return (
@@ -27,9 +27,9 @@ const Navbar = () => {
         <SearchModal />
 
         <div className="flex items-center justify-center space-x-4">
-          {/* <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2 dark:hover:bg-gray-900 dark:hover:text-white">
+          <div className="hidden lg:block hover:bg-gray-100 hover:rounded-full px-3 py-2 dark:hover:bg-gray-900 dark:hover:text-white">
             Airbnb your home
-          </div> */}
+          </div>
           <div>
             <ModeToggle />
           </div>
