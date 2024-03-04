@@ -5,6 +5,7 @@ import Link from "next/link";
 import UserNav from "./UserNav";
 import ModeToggle from "./ModeToggle";
 import SearchBar from "./SearchBar";
+import SearchModal from "./SearchModal";
 
 const Navbar = () => {
   return (
@@ -23,7 +24,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <SearchBar />
+        <SearchModal />
 
         <div className="flex items-center justify-center space-x-4">
           {/* <div className="hover:bg-gray-100 hover:rounded-full px-3 py-2 dark:hover:bg-gray-900 dark:hover:text-white">
