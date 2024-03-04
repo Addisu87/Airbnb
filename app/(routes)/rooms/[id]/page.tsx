@@ -101,12 +101,12 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
           <Calender />
           {user?.id ? (
             <>
-              <Button>Reserve</Button>
+              <Button className="w-full">Reserve</Button>
             </>
           ) : (
             <>
-              <Button>
-                <Link href="/api/auth/login">Reserve</Link>
+              <Button className="w-full">
+                <Link href="/api/auth/login">Make a Reservation</Link>
               </Button>
             </>
           )}
