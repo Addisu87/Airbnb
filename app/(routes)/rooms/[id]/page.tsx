@@ -12,6 +12,7 @@ import RoomMap from "@/app/components/RoomMap";
 import Calender from "@/app/components/Calender";
 import { Button } from "@/components/ui/button";
 import { getReservation } from "@/actions/getReservation";
+import { SubmitButton } from "@/app/components/SubmitButtons";
 
 // fetch data
 async function getData(homeId: string) {
@@ -100,16 +101,17 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
           <RoomMap locationValue={country?.value as string} />
         </div>
 
-        <form action={getReservation}>
+        <form action={getReservation} className="flex flex-col items-center">
           <input type="hidden" name="homeId" value={params.id} />
           <input type="hidden" name="userId" value={user?.id} />
           <Calender reservation={data?.reservation} />
 
           {user?.id ? (
             <>
-              <Button className="w-full" type="submit">
-                Reserve
-              </Button>
+              <SubmitButton
+                label={{ default: "Reserve", loading: "loading..." }}
+                className="w-full"
+              />
             </>
           ) : (
             <>
