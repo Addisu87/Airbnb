@@ -29,6 +29,11 @@ async function getData(homeId: string) {
       price: true,
       country: true,
       categoryName: true,
+      reservation: {
+        where: {
+          homeId: homeId,
+        },
+      },
       user: {
         select: {
           imageSrc: true,
@@ -98,15 +103,18 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
         <form action={getReservation}>
           <input type="hidden" name="homeId" value={params.id} />
           <input type="hidden" name="userId" value={user?.id} />
-          <Calender />
+          <Calender reservation={data?.reservation} />
+
           {user?.id ? (
             <>
-              <Button className="w-full">Reserve</Button>
+              <Button className="w-full" type="submit">
+                Reserve
+              </Button>
             </>
           ) : (
             <>
-              <Button className="w-full">
-                <Link href="/api/auth/login">Make a Reservation</Link>
+              <Button className="w-full" asChild>
+                <Link href="/api/auth/login">Reserve</Link>
               </Button>
             </>
           )}
