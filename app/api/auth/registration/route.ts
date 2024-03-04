@@ -35,7 +35,7 @@ export async function GET() {
       });
     }
 
-    return NextResponse.redirect("http://localhost:3000/");
+    return NextResponse.redirect("https://airbnb-weld-five.vercel.app");
   } catch (error) {
     console.error("Error in registration route:", error);
     throw new Error("Something went wrong!");
