@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import toast from "react-hot-toast";
+import { unstable_noStore as noStore } from "next/cache";
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import prismadb from "@/lib/db";
 
 export async function GET() {
+  noStore();
   try {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
