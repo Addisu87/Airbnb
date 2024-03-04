@@ -15,7 +15,17 @@ const Calender = () => {
     },
   ]);
   return (
-    <div>
+    <>
+      <input
+        type="hidden"
+        name="startDate"
+        value={state[0].startDate.toISOString()}
+      />
+      <input
+        type="hidden"
+        name="endDate"
+        value={state[0].endDate.toISOString()}
+      />
       <DateRange
         date={new Date()}
         showDateDisplay={false}
@@ -25,7 +35,7 @@ const Calender = () => {
         minDate={new Date()}
         direction="vertical"
       />
-    </div>
+    </>
   );
 };
 

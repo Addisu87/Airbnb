@@ -65,7 +65,7 @@ model Favorite {
 model Reservation {
   id String @id @default(uuid())
 
-  startData DateTime
+  startDate DateTime
   endDate DateTime
   createdAt  DateTime @default(now())
 
