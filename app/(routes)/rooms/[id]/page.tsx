@@ -7,6 +7,7 @@ import { useCountries } from "@/app/hooks/getCountries";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import RoomMap from "@/app/components/RoomMap";
+import Calender from "@/app/components/Calender";
 
 // fetch data
 async function getData(homeId: string) {
@@ -86,6 +87,8 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
           <Separator className="my-7" />
           <RoomMap locationValue={country?.value as string} />
         </div>
+
+        <Calender />
       </div>
     </div>
   );
