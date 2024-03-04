@@ -14,7 +14,7 @@ const CategoryShowCase = ({ categoryName }: { categoryName: string }) => {
       <Icon size={32} />
       <div className="flex flex-col ml-4">
         <h3 className="font-medium">{category?.label}</h3>
-        <p className="text-muted-foreground">{category?.description}</p>
+        <p className="text-sm text-muted-foreground">{category?.description}</p>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Heading from "@/app/components/Heading";
 import { useCountries } from "@/app/hooks/getCountries";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import RoomMap from "@/app/components/RoomMap";
 
 // fetch data
 async function getData(homeId: string) {
@@ -73,12 +74,17 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
               <p className="text-sm text-muted-foreground">Hosted since 2015</p>
             </div>
           </div>
+
           <Separator className="my-7" />
+
           <CategoryShowCase categoryName={data?.categoryName as string} />
 
           <Separator className="my-7" />
+
           <p className="text-muted-foreground">{data?.description}</p>
+
           <Separator className="my-7" />
+          <RoomMap locationValue={country?.value as string} />
         </div>
       </div>
     </div>
