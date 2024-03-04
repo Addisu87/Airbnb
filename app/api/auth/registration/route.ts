@@ -13,7 +13,7 @@ export async function GET() {
 
     if (!user || user.id === null || !user.id) {
       toast.error("Something went wrong.");
-      return NextResponse.redirect("http://localhost:3000");
+      return NextResponse.redirect("https://airbnb-weld-five.vercel.app");
     }
 
     let dbUser = await prismadb.user.findUnique({
