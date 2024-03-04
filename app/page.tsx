@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { unstable_noStore as noStore } from "next/cache";
 
 import prismadb from "@/lib/db";
 import Categories from "@/app/components/Categories";
@@ -20,6 +21,7 @@ async function getData({
     bathroom?: string;
   };
 }) {
+  noStore();
   const data = await prismadb.home.findMany({
     where: {
       addedCategory: true,

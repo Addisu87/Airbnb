@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { unstable_noStore as noStore } from "next/cache";
 
 import prismadb from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -7,6 +8,7 @@ import NotFound from "@/app/components/Not-Found";
 import ListingCard from "@/app/components/ListingCard";
 
 async function getData(userId: string) {
+  noStore();
   const data = await prismadb.favorite.findMany({
     where: {
       userId: userId,

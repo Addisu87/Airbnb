@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 import prismadb from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -16,6 +17,7 @@ import { SubmitButton } from "@/app/components/SubmitButtons";
 
 // fetch data
 async function getData(homeId: string) {
+  noStore();
   const data = await prismadb.home.findUnique({
     where: {
       id: homeId,
