@@ -74,7 +74,7 @@ async function ShowItems({
               price={item.price as number}
               userId={user?.id}
               favoriteId={item.favorite[0]?.id}
-              isInFavoriteList={item.favorite.length > 0 ? true : false}
+              isInFavoriteList={item.favorite.length > 0}
               homeId={item.id}
               pathname="/"
             />
