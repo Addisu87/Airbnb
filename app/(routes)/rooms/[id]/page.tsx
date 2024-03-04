@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import prismadb from "@/lib/db";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import CategoryShowCase from "@/app/components/CategoryShowCase";
 import Heading from "@/app/components/Heading";
 import { useCountries } from "@/app/hooks/getCountries";
@@ -8,6 +10,8 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import RoomMap from "@/app/components/RoomMap";
 import Calender from "@/app/components/Calender";
+import { Button } from "@/components/ui/button";
+import { getReservation } from "@/actions/getReservation";
 
 // fetch data
 async function getData(homeId: string) {
@@ -40,6 +44,9 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
   const data = await getData(params.id);
   const { getCountryByValue } = useCountries();
   const country = getCountryByValue(data?.country as string);
+
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
 
   return (
     <div className="w-[75%] mx-auto mt-10 mb-12">
@@ -88,7 +95,22 @@ const RoomsRoute = async ({ params }: { params: { id: string } }) => {
           <RoomMap locationValue={country?.value as string} />
         </div>
 
-        <Calender />
+        <form action={getReservation}>
+          <input type="hidden" name="homeId" value={params.id} />
+          <input type="hidden" name="userId" value={user?.id} />
+          <Calender />
+          {user?.id ? (
+            <>
+              <Button>Reserve</Button>
+            </>
+          ) : (
+            <>
+              <Button>
+                <Link href="/api/auth/login">Reserve</Link>
+              </Button>
+            </>
+          )}
+        </form>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 
 import Navbar from "@/app/components/Navbar";
 
@@ -7,9 +7,9 @@ import "./globals.css";
 import ToasterProvider from "@/providers/toast-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-const font = Nunito({
+const font = Nunito_Sans({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "700"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
