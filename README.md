@@ -36,6 +36,12 @@ npx prisma db push
 npx prisma studio
 ```
 
+(gti clone https://github.com/Addisu87/Airbnb)
+and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
+
+## Live demo
+(https://airbnb-addisu87.vercel.app)
+
 ## Features:
 
 - 🌐 Next.js 14 App Router
