@@ -1,6 +1,6 @@
 ## Project Description
 
-This is an airbnb clone.
+This Airbnb clone which is a platform that enables hosts to offer stays and experiences to guests worldwide. This marketplace connects hosts and guests online or through mobile devices to book spaces and experiences.
 
 ## Getting Started
 
@@ -40,6 +40,7 @@ npx prisma studio
 and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
 
 ## Live demo
+
 (https://airbnb-addisu87.vercel.app)
 
 ## Features:
