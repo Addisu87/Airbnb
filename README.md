@@ -41,7 +41,7 @@ and copy the .env.example variables into a separate .env file, fill them out & a
 
 ## Live demo
 
-(https://airbnb-addisu87.vercel.app)
+(https://airbnb-bnt8.vercel.app)
 
 ## Features:
 
