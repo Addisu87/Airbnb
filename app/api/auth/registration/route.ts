@@ -13,9 +13,7 @@ export async function GET() {
 
 		if (!user || user.id === null || !user.id) {
 			toast.error('Something went wrong.');
-			return NextResponse.redirect(
-				'https://airbnb-bnt8.vercel.app',
-			);
+			return NextResponse.redirect('https://airbnb-bnt8.vercel.app');
 		}
 
 		let dbUser = await prismadb.user.findUnique({
@@ -38,9 +36,7 @@ export async function GET() {
 			});
 		}
 
-		return NextResponse.redirect(
-			'https://airbnb-bnt8.vercel.app',
-		);
+		return NextResponse.redirect('https://airbnb-bnt8.vercel.app');
 	} catch (error) {
 		console.error('Error in registration route:', error);
 		throw new Error('Something went wrong!');

@@ -1,13 +1,13 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 export default function RentLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <>
-      <div className="mt-10">{children}</div>
-    </>
-  );
+	return (
+		<>
+			<div className='mt-10'>{children}</div>
+		</>
+	);
 }
