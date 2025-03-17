@@ -12,6 +12,7 @@ import Link from "next/link"
 import Heading from "@/app/components/Heading"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import CountryDisplay from "./CountryDisplay"
+import { getReservation } from "@/actions/getReservation"
 
 type HomeWithRelations = Home & {
 	user: Pick<User, "firstName" | "imageSrc"> | null
