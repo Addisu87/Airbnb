@@ -1,12 +1,12 @@
-'use server';
+"use server"
 
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation"
 
-import prismadb from '@/lib/db';
+import prismadb from "@/lib/db"
 
 export async function getCategory(formData: FormData) {
-	const categoryName = formData.get('categoryName') as string;
-	const homeId = formData.get('homeId') as string;
+	const categoryName = formData.get("categoryName") as string
+	const homeId = formData.get("homeId") as string
 
 	const data = await prismadb.home.update({
 		where: {
@@ -16,7 +16,7 @@ export async function getCategory(formData: FormData) {
 			categoryName: categoryName,
 			addedCategory: true,
 		},
-	});
+	})
 
-	return redirect(`/rent/${homeId}/description`);
+	return redirect(`/rent/${homeId}/description`)
 }
