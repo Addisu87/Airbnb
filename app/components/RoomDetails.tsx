@@ -13,20 +13,18 @@ import Heading from "@/app/components/Heading"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import CountryDisplay from "./CountryDisplay"
 
+type HomeWithRelations = Home & {
+	user: Pick<User, "firstName" | "imageSrc"> | null
+	reservation: Reservation[]
+}
+
 interface RoomDetailsProps {
-	data: Home & {
-		user: Pick<User, "firstName" | "imageSrc">
-		reservation: Reservation[]
-	}
+	data: HomeWithRelations
 	user: { id: string } | null
 	params: { id: string }
 }
 
-export default function RoomDetails({
-	data,
-	user,
-	params,
-}: RoomDetailsProps) {
+export default function RoomDetails({ data, user, params }: RoomDetailsProps) {
 	return (
 		<div className="w-[75%] mx-auto mt-10 mb-12">
 			<Heading title={data?.title || ""} />
@@ -40,7 +38,7 @@ export default function RoomDetails({
 				/>
 			</div>
 
-			<CountryDisplay countryValue={data.country as string}>
+			<CountryDisplay countryValue={data.country || ""}>
 				{(country) => (
 					<>
 						<div className="flex flex-col gap-2 mt-4">

@@ -9,21 +9,13 @@ async function getData(homeId: string) {
     where: {
       id: homeId,
     },
-    select: {
-      title: true,
-      description: true,
-      guests: true,
-      bedrooms: true,
-      bathrooms: true,
-      photo: true,
+    include: {
       user: {
         select: {
           firstName: true,
           imageSrc: true,
         },
       },
-      categoryName: true,
-      country: true,
       reservation: true,
     },
   })
@@ -44,5 +36,9 @@ export default async function RoomsRoute({
     return <div>Not found</div>
   }
 
-  return <RoomDetails data={data} user={user} params={params} />
+  return <RoomDetails 
+    data={data} 
+    user={user ? { id: user.id } : null} 
+    params={params} 
+  />
 }
