@@ -1,6 +1,10 @@
 "use client"
 
-import { Home, Reservation, User } from "@prisma/client"
+import {
+	Home,
+	Reservation,
+	User,
+} from "@prisma/client"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 import CategoryShowCase from "@/app/components/CategoryShowCase"
@@ -10,12 +14,19 @@ import { Button } from "@/components/ui/button"
 import { SubmitButton } from "@/app/components/SubmitButtons"
 import Link from "next/link"
 import Heading from "@/app/components/Heading"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
+} from "@/components/ui/avatar"
 import CountryDisplay from "./CountryDisplay"
 import { getReservation } from "@/actions/getReservation"
 
 type HomeWithRelations = Home & {
-	user: Pick<User, "firstName" | "imageSrc"> | null
+	user: Pick<
+		User,
+		"firstName" | "imageSrc"
+	> | null
 	reservation: Reservation[]
 }
 
@@ -25,13 +36,17 @@ interface RoomDetailsProps {
 	params: { id: string }
 }
 
-export default function RoomDetails({ data, user, params }: RoomDetailsProps) {
+export default function RoomDetails({
+	data,
+	user,
+	params,
+}: RoomDetailsProps) {
 	return (
 		<div className="w-[75%] mx-auto mt-10 mb-12">
 			<Heading title={data?.title || ""} />
 			<div className="relative h-[500px] w-full">
 				<Image
-					src={`https://bstgrdyurhlpzkfyoefz.supabase.co/storage/v1/object/public/images/${data?.photo}`}
+					src={`https://hljcmoxhoxlzloofamyr.supabase.co/storage/v1/object/public/images/${data?.photo}`}
 					alt="Image of House"
 					fill
 					className="rounded-lg object-cover w-full"
@@ -39,12 +54,15 @@ export default function RoomDetails({ data, user, params }: RoomDetailsProps) {
 				/>
 			</div>
 
-			<CountryDisplay countryValue={data.country || ""}>
+			<CountryDisplay
+				countryValue={data.country || ""}
+			>
 				{(country) => (
 					<>
 						<div className="flex flex-col gap-2 mt-4">
 							<h3 className="font-semibold text-xl">
-								{country?.label}, {country?.region}
+								{country?.label},{" "}
+								{country?.region}
 							</h3>
 							<div className="flex gap-x-2 text-muted-foreground">
 								<p>{data?.guests} Guests</p> *
@@ -59,11 +77,14 @@ export default function RoomDetails({ data, user, params }: RoomDetailsProps) {
 											"https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
 										}
 									/>
-									<AvatarFallback>UI</AvatarFallback>
+									<AvatarFallback>
+										UI
+									</AvatarFallback>
 								</Avatar>
 								<div className="flex flex-col ml-4">
 									<h3 className="font-medium">
-										Hosted by {data?.user?.firstName}
+										Hosted by{" "}
+										{data?.user?.firstName}
 									</h3>
 									<p className="text-sm text-muted-foreground">
 										Hosted since 2015
