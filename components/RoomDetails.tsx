@@ -7,13 +7,13 @@ import {
 } from "@prisma/client"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import CategoryShowCase from "@/app/components/CategoryShowCase"
-import RoomMap from "@/app/components/RoomMap"
-import Calender from "@/app/components/Calender"
+import CategoryShowCase from "@/components/CategoryShowCase"
+import RoomMap from "@/components/RoomMap"
+import Calender from "@/components/Calender"
 import { Button } from "@/components/ui/button"
-import { SubmitButton } from "@/app/components/SubmitButtons"
+import { SubmitButton } from "@/components/SubmitButtons"
 import Link from "next/link"
-import Heading from "@/app/components/Heading"
+import Heading from "@/components/Heading"
 import {
 	Avatar,
 	AvatarFallback,

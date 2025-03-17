@@ -2,11 +2,11 @@ import { Suspense } from "react"
 import { unstable_noStore as noStore } from "next/cache"
 
 import prismadb from "@/lib/db"
-import Categories from "@/app/components/Categories"
-import ListingCard from "@/app/components/ListingCard"
-import CardSkeleton from "@/app/components/CardSkeleton"
+import Categories from "@/components/Categories"
+import ListingCard from "@/components/ListingCard"
+import CardSkeleton from "@/components/CardSkeleton"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
-import NotFound from "@/app/components/Not-Found"
+import NotFound from "@/components/Not-Found"
 
 async function getData({
 	searchParams,
