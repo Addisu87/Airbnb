@@ -1,22 +1,27 @@
 "use client"
 
+import { Home } from "@prisma/client"
 import { useCountries } from "@/app/hooks/getCountries"
 
+type CountryData = {
+  value: string
+  label: string
+  flag: string
+  latLang: [number, number]
+  region: string
+}
+
 interface CountryDisplayProps {
-	countryValue: string
-	children: (
-		country: ReturnType<
-			typeof useCountries
-		>["getCountryByValue"],
-	) => React.ReactNode
+  countryValue: NonNullable<Home["country"]>
+  children: (country: CountryData | undefined) => React.ReactNode
 }
 
 export default function CountryDisplay({
-	countryValue,
-	children,
+  countryValue,
+  children,
 }: CountryDisplayProps) {
-	const { getCountryByValue } = useCountries()
-	const country = getCountryByValue(countryValue)
+  const { getCountryByValue } = useCountries()
+  const country = getCountryByValue(countryValue)
 
-	return <>{children(country)}</>
+  return <>{children(country)}</>
 }
