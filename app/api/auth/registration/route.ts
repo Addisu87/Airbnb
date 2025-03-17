@@ -11,9 +11,7 @@ export async function GET() {
 
 		if (!user || !user.id) {
 			// Instead of toast, return an error response or redirect
-			return NextResponse.redirect(
-				"https://airbnb-bnt8.vercel.app",
-			)
+			return NextResponse.redirect("https://airbnb-homes.vercel.app")
 		}
 
 		let dbUser = await prismadb.user.findUnique({
@@ -29,24 +27,14 @@ export async function GET() {
 					firstName: user.given_name ?? "",
 					lastName: user.family_name ?? "",
 					email: user.email ?? "",
-					imageSrc:
-						user.picture ??
-						`https://avatar.vercel.sh/${user.given_name}`,
+					imageSrc: user.picture ?? `https://avatar.vercel.sh/${user.given_name}`,
 				},
 			})
 		}
 
-		return NextResponse.redirect(
-			"https://airbnb-bnt8.vercel.app",
-		)
+		return NextResponse.redirect("https://airbnb-homes.vercel.app")
 	} catch (error) {
-		console.error(
-			"Error in registration route:",
-			error,
-		)
-		return NextResponse.json(
-			{ error: "Something went wrong!" },
-			{ status: 500 },
-		)
+		console.error("Error in registration route:", error)
+		return NextResponse.json({ error: "Something went wrong!" }, { status: 500 })
 	}
 }
