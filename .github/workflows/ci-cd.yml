@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use the Node version your project requires
+          node-version: "20" # Use the Node version your project requires
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -55,7 +55,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Cache dependencies
         uses: actions/cache@v3
